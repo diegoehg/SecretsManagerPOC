@@ -2,7 +2,7 @@ package com.secretmanagers.SecretsManagerPOC.services;
 
 import com.secretmanagers.SecretsManagerPOC.models.ApiCredentials;
 
-public class SecretsManagerClient {
+public class ApiCredentialsProvider {
     ApiCredentials getCredentials() {
 
 
