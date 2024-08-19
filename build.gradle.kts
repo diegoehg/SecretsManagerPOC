@@ -20,6 +20,7 @@ repositories {
 dependencies {
 	implementation("software.amazon.awssdk:auth:2.26.31")
 	implementation("software.amazon.awssdk:secretsmanager:2.26.31")
+	implementation("com.amazonaws.secretsmanager:aws-secretsmanager-caching-java:2.0.0")
 	implementation("org.springframework.boot:spring-boot-starter")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")

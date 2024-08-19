@@ -17,4 +17,16 @@ public class ApiCredentialsProviderTest {
         assertFalse(apiCredentials.apiPcc().isBlank());
         assertFalse(apiCredentials.apiJsonDomain().isBlank());
     }
+
+    @Test
+    void testGetCredentialsFromCache() {
+        ApiCredentialsProvider provider = new ApiCredentialsProvider();
+        ApiCredentials apiCredentials = provider.getCredentialsFromCache();
+        assertFalse(apiCredentials.apiClientId().isBlank());
+        assertFalse(apiCredentials.apiDomain().isBlank());
+        assertFalse(apiCredentials.apiJsonUserId().isBlank());
+        assertFalse(apiCredentials.apiPassword().isBlank());
+        assertFalse(apiCredentials.apiPcc().isBlank());
+        assertFalse(apiCredentials.apiJsonDomain().isBlank());
+    }
 }
