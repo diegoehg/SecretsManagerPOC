@@ -35,12 +35,12 @@ public class ApiCredentialsProvider {
         return new SecretCache(configuration);
     }
 
-    ApiCredentials getCredentials() {
+    ApiCredentials getCredentials(String secretId) {
         ApiCredentials apiCredentials;
 
         try(SecretsManagerClient secretsManagerClient = getSecretsManagerClient()) {
             GetSecretValueRequest request = GetSecretValueRequest.builder()
-                    .secretId("ApiCredentials")
+                    .secretId(secretId)
                     .build();
             GetSecretValueResponse response = secretsManagerClient.getSecretValue(request);
 
@@ -50,11 +50,11 @@ public class ApiCredentialsProvider {
         return apiCredentials;
     }
 
-    ApiCredentials getCredentialsFromCache() {
+    ApiCredentials getCredentialsFromCache(String secretId) {
         ApiCredentials credentials;
 
         try(SecretCache cache = getSecretCache()) {
-            String secretString = cache.getSecretString("ApiCredentials");
+            String secretString = cache.getSecretString(secretId);
             credentials = parseApiCredentials(secretString);
         }
 

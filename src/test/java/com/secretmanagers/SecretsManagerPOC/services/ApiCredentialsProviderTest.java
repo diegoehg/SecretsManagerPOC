@@ -9,7 +9,7 @@ public class ApiCredentialsProviderTest {
     @Test
     void testGetCredentials() {
         ApiCredentialsProvider client = new ApiCredentialsProvider();
-        ApiCredentials apiCredentials = client.getCredentials();
+        ApiCredentials apiCredentials = client.getCredentials("ApiCredentials");
         assertFalse(apiCredentials.apiClientId().isBlank());
         assertFalse(apiCredentials.apiDomain().isBlank());
         assertFalse(apiCredentials.apiJsonUserId().isBlank());
@@ -21,7 +21,7 @@ public class ApiCredentialsProviderTest {
     @Test
     void testGetCredentialsFromCache() {
         ApiCredentialsProvider provider = new ApiCredentialsProvider();
-        ApiCredentials apiCredentials = provider.getCredentialsFromCache();
+        ApiCredentials apiCredentials = provider.getCredentialsFromCache("ApiCredentials");
         assertFalse(apiCredentials.apiClientId().isBlank());
         assertFalse(apiCredentials.apiDomain().isBlank());
         assertFalse(apiCredentials.apiJsonUserId().isBlank());
